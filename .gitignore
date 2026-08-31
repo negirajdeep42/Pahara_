@@ -1,0 +1,19 @@
+node_modules/
+dist/
+dist-ssr/
+dev-dist/
+
+# Local env files — never commit a bot token
+.env
+.env.local
+.env.*.local
+
+# Python pipeline
+__pycache__/
+*.pyc
+
+*.log
+.DS_Store
+.vercel
+.vscode/*
+!.vscode/extensions.json

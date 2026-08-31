@@ -1,0 +1,33 @@
+{
+  "name": "pahara",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PAHARA - Predictive Analytics for Hazard Assessment and Rapid Alerts. Landslide early warning dashboard for Northeast India. SIH 2026 / SIH26001.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:engine": "node src/lib/riskEngine.test.mjs",
+    "test:factors": "node src/lib/factors.test.mjs",
+    "test": "npm run test:engine && npm run test:factors && npm run test:search && npm run test:render",
+    "test:search": "node src/lib/placeSearch.test.mjs",
+    "test:render": "esbuild src/lib/render.test.jsx --bundle --platform=node --format=esm --jsx=automatic --packages=external --loader:.json=json --outfile=data/cache/render.test.mjs --log-level=warning && node data/cache/render.test.mjs"
+  },
+  "dependencies": {
+    "fuse.js": "^7.5.0",
+    "i18next": "^23.15.1",
+    "maplibre-gl": "^4.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8",
+    "vite-plugin-pwa": "^0.20.5"
+  }
+}
